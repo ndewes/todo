@@ -27,16 +27,14 @@ def add():
 
     return redirect(url_for('home'))
 
-@app.route('/update/', methods=['POST'])
+@app.route('/edit', methods=['GET'])
 def update():
     return render_template('base.html')
 
-@app.route('/save/<int:todo_id>', methods=['GET', 'POST'])
+@app.route('/save/<int:todo_id>', methods=['POST'])
 def save(todo_id):
-    test = request.form.get("newTitle")
-    print(test)
-    todo = Todo.query.filter_by(id=todo_id)
-    todo.title = test
+    todo = Todo.query.filter_by(id=todo_id).first()
+    todo.title = request.form.get("newTitle")
     db.session.commit()
 
     return redirect(url_for('home'))

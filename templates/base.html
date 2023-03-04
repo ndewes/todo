@@ -34,11 +34,16 @@
             <a class="ui green label" href="/complete/{{ todo.id }}">Completed</a>
             {% endif %}
 
-            <a class="ui blue button" href="/update">Update</a>
+            <a class="ui blue button" href="/edit">Edit</a>
             <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
-            <input type="text" name="newTitle" placeholder="Enter new Todo name...">
-            <a class="ui blue button" href="/save/{{ todo.id }}">Save</a>
-            <a class="ui blue button" href="/close">Close</a>
+
+            <form class="ui form" action="/save/{{ todo.id}}" method="post">
+                <div class="field">
+                    <input type="text" name="newTitle" placeholder="Enter new Todo name...">
+                </div>
+                <button class="ui blue button" type="submit">Save</button>
+                <a class="ui blue button" href="/close">Close</a>
+            </form>
 
         </div>
         {% endfor %}
