@@ -27,10 +27,6 @@ def add():
 
     return redirect(url_for('home'))
 
-@app.route('/edit', methods=['GET'])
-def update():
-    return render_template('base.html')
-
 @app.route('/save/<int:todo_id>', methods=['POST'])
 def save(todo_id):
     todo = Todo.query.filter_by(id=todo_id).first()

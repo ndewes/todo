@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0 -1px 3px rgba(0,0,0,.2);
+}
+.input-field {
+    display: flex;
+    align-items: center;
+}
+
+.input-field input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-field .ui.blue.button {
+    flex-shrink: 0;
+}
+.content_section {
+    margin-top: 10px;
+    display: none;
+}
+.content_section.active {
+    display: block;
+}
